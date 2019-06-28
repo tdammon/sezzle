@@ -7,9 +7,9 @@ app.use(express.static('build'));
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT 
 
-app.listen(PORT, () => console.log(`connected to ${PORT}!`));
+server.listen(PORT, () => console.log(`connected to ${PORT}!`));
 
 
 
