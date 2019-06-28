@@ -19,8 +19,6 @@ class App extends Component {
           <Switch>
             {/* Visiting localhost:8000 will redirect to localhost:8000/home */}
             <Redirect exact from="/" to="/home" />
-            {/* Visiting localhost:8000/about will show the about page.
-            This is a route anyone can see, no login necessary */}
             <Route
               exact
               path="/home"
