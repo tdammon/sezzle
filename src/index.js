@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import Calculator from './components/Calculator';
+import configureSocket from './components/socket';
+import { createStore } from 'redux';
+import equationReducer from './redux/equationReducer';
+import { Provider } from 'react-redux';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const store = createStore(equationReducer);
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+export const socket = configureSocket(store.dispatch);
+
+
+ReactDOM.render(<Provider store={store}><Calculator /></Provider>, document.getElementById('root'));
