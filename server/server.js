@@ -18,6 +18,7 @@ io.on('connection', socket => {
     socket.on('SEND_EQUATION_TO_SERVER', equation => {
         equationsList = [...equationsList, equation];
         console.log(equationsList, 'working')
+        socket.broadcast.emit('SEND_EQUATIONS_TO_USERS', equationsList);
         socket.emit('SEND_EQUATIONS_TO_USERS', equationsList);
       });
 
