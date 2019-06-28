@@ -3,9 +3,10 @@ import { socket } from '../index';
 const equationReducer = (state = [],action) => {
   switch (action.type) {
     case 'ADD_EQUATION':
-      console.log(action)
+      console.log('adding equation')
       state = [ ...state, action.payload.equation +' = '+ action.payload.solution];
-      socket && socket.emit('UPDATE_EQUATION_LIST', state);
+      console.log(state)
+      socket && socket.emit('UPDATE_EQUATIONS_LIST', state);
       break;
     default:
       break;

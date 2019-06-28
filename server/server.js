@@ -15,7 +15,7 @@ server.listen(PORT, () => console.log(`connected to ${PORT}!`));
 let equationsList = []
 io.on('connection', socket => {
     socket.on('UPDATE_EQUATIONS_LIST', state => {
-        equationsList = state.equationsList;
+        equationsList = state;
         socket.broadcast.emit('UPDATED_LIST', state);
       });
 
