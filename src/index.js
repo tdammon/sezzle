@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Calculator from './components/Calculator';
+import App from './components/App';
 import configureSocket from './components/socket';
 import { createStore } from 'redux';
 import equationReducer from './redux/equationReducer';
@@ -11,4 +11,4 @@ const store = createStore(equationReducer);
 export const socket = configureSocket(store.dispatch);
 
 
-ReactDOM.render(<Provider store={store}><Calculator /></Provider>, document.getElementById('root'));
+ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));

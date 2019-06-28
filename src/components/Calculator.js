@@ -72,9 +72,9 @@ class Calculator extends Component {
   //First we make sure the equation returns a number
   //If it does then we dispatch the answer to the server
   solveEquation=() => {
-    let solution = eval(this.state.equation)
-    if(typeof solution== 'number'){
-  
+    
+    if(typeof eval(this.state.equation)== 'number'){
+      let solution = eval(this.state.equation)
       // sendEquationToServer(this.state.equation, solution);
 
       this.props.dispatch({type: 'ADD_EQUATION', payload: {equation: this.state.equation, solution: solution}})
