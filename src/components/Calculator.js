@@ -74,11 +74,11 @@ class Calculator extends Component {
   solveEquation=() => {
     
     if(typeof eval(this.state.equation)== 'number'){
-      let solution = eval(this.state.equation)
-      // sendEquationToServer(this.state.equation, solution);
+      let equation= this.state.equation +' = '+ eval(this.state.equation)
+      sendEquationToServer(equation);
 
-      this.props.dispatch({type: 'ADD_EQUATION', payload: {equation: this.state.equation, solution: solution}})
-      console.log(eval(this.state.equation))
+      // this.props.dispatch({type: 'SEND_EQUATION_TO_SERVER', payload: {equation: this.state.equation, solution: solution}})
+      // console.log(eval(this.state.equation))
     } else {
       console.log('Invalid Equation')
     }

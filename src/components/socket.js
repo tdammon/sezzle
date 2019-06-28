@@ -7,9 +7,17 @@ const configureSocket = dispatch => {
   socket.on('connect', () => {
     console.log('connected');
   });
-  socket.on('UPDATED_EQUATION_LIST', state => {
+
+  socket.on('UPDATED_LIST', state => {
+      console.log('test')
     dispatch({ type: 'DELIVER_UPDATED_EQUATIONS_TO_REDUCER', updatedEquations: state });
   });
+
+  socket.on('SEND_EQUATIONS_TO_USERS', equationList => {
+      console.log('sending equations to users', equationList)
+    dispatch({ type: 'PUT_ALL_EQUATIONS_TO_REDUCER', equationList })
+  });
+
   return socket;
 };
 
@@ -19,5 +27,6 @@ export const getCurrentEquations = () => socket.emit('GET_CURRENT_EQUATIONS');
 
 export const sendEquationToServer = equation =>
   socket.emit('SEND_EQUATION_TO_SERVER', equation);
+  
 
 export default configureSocket;
