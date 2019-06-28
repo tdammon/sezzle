@@ -22,7 +22,8 @@ const equationReducer = (state = [],action) => {
     case 'CURRENT_LIST_TO_REDUCER':
       // when the api call to the server is returned successfuly
       // this is called so that the app's state reflects the current list value
-      state = [action.equationList];
+      console.log('updating', action)
+      state = [...state, ...action.equationsList];
       break;  
     default:
       break;

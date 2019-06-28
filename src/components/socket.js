@@ -18,9 +18,10 @@ const configureSocket = dispatch => {
     dispatch({ type: 'PUT_ALL_EQUATIONS_TO_REDUCER', equationList })
   });
 
-  socket.on('CURRENT_LIST', equationsList =>
+  socket.on('CURRENT_LIST', equationsList => {
+      console.log('getting info')
     dispatch({ type: 'CURRENT_LIST_TO_REDUCER', equationsList: equationsList })
-  );
+  });
 
   return socket;
 };
