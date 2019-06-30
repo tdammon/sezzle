@@ -19,6 +19,7 @@ Before you get started, make sure you have the following software installed on y
 * Run `npm install`
 * Run `npm run server`
 * Run `npm run client`
+* change the line const socket = io(); in socket.js to const socket = io('http://localhost:8000');
 * Navigate to `localhost:3000`
 
 ### Completed Features
