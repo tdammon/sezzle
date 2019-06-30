@@ -114,6 +114,7 @@ class Calculator extends Component {
     const {classes} = this.props
     return (
       <div className={classes.root}>
+        <EquationList/>
         <div className={classes.calculator}>
           <div className={classes.row}>
             <div
@@ -254,7 +255,7 @@ class Calculator extends Component {
           </div>          
           
         </div>
-        <EquationList/>
+        
       </div>
     );
   }
