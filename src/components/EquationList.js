@@ -5,7 +5,7 @@ import Brightness1 from '@material-ui/icons/Brightness1';
 
 const styles = theme => ({
     root : {
-
+        background : 'white',
     },
 
 })
@@ -17,7 +17,7 @@ class EquationList extends Component {
   render() {
     const classes = styles();
     return(
-        <div>
+        <div className={classes.root}>
         <List>
         {this.props.equationList.map( equation => {
             return(
