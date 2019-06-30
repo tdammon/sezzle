@@ -115,7 +115,6 @@ class Calculator extends Component {
     const {classes} = this.props
     return (
       <div className={classes.root}>
-      {JSON.stringify(this.props.equationList)}
         <div className={classes.calculator}>
           <div className={classes.row}>
             <div
