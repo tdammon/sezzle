@@ -16,26 +16,52 @@ const styles = theme => ({
     justifyContent: 'center',
   },
   calculator : {
-    height: '100%',
-    width: '30%',
+    height: 'auto',
+    width: 'auto',
+    padding: '15px',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'space-around',
     justifyContent: 'space-around',
+    background:'black',
+    boxShadow:'0 10px 15px rgba(0,0,0,.2)',
   },
   row: {
     display: 'flex',
     alignItems: 'flex-end',
     justifyContent: 'space-around',
-    margin: 10,
+    margin: 0,
   },
   equation : {
     border: '1px solid black',
-    width: '65%',
-    margin: 0,
+    fontWeight:'bold',
+    fontSize: '30px',
+    color: 'white',
+	  textAlign:'right',
+    width: '75%',
+    height: '36px',
+    margin: 1,
+    background:'#4D4E4F',
+    // opacity: '0.5',
+  },
+  buttonNumber : {
+    height: '50%',
+    background:'#d8d9db',
+    margin: 1,
+    '&:hover': {
+      background: 'white',
+    },
   },
   button : {
     height: '50%',
+    background:'#f89112',
+    margin: 1,
+    '&:hover': {
+      background: 'white',
+    },
+  },
+  text :{
+    margin:'0px',
   }
 })
 
@@ -74,6 +100,7 @@ class Calculator extends Component {
   solveEquation=() => {
     
     if(typeof eval(this.state.equation)== 'number'){
+      this.clearEquation()
       let equation= this.state.equation +' = '+ eval(this.state.equation)
       sendEquationToServer(equation);
 
@@ -91,16 +118,14 @@ class Calculator extends Component {
       {JSON.stringify(this.props.equationList)}
         <div className={classes.calculator}>
           <div className={classes.row}>
-            <TextField
+            <div
               id="equation"
-              label="Enter an Equation"
-              InputProps={{
-              disableUnderline: true,
-              }}
               className={classes.equation}
               value={this.state.equation}
               margin="normal"
-              />    
+              > 
+              <p className={classes.text}>{this.state.equation}</p>
+            </div>   
             <Button 
               variant="outlined"
               className={classes.button}
@@ -112,21 +137,21 @@ class Calculator extends Component {
           <div className={classes.row}>
             <Button 
               variant="outlined"
-              className={classes.button}
+              className={classes.buttonNumber}
               onClick={()=>this.makeEquation('7')}
             >
               7
             </Button>     
             <Button 
               variant="outlined"
-              className={classes.button}
+              className={classes.buttonNumber}
               onClick={()=>this.makeEquation('8')}
             >
               8
             </Button>     
             <Button 
               variant="outlined"
-              className={classes.button}
+              className={classes.buttonNumber}
               onClick={()=>this.makeEquation('9')}
             >
               9
@@ -142,21 +167,21 @@ class Calculator extends Component {
           <div className={classes.row}>
             <Button 
               variant="outlined"
-              className={classes.button}
+              className={classes.buttonNumber}
               onClick={()=>this.makeEquation('4')}
             >
               4
             </Button>     
             <Button 
               variant="outlined"
-              className={classes.button}
+              className={classes.buttonNumber}
               onClick={()=>this.makeEquation('5')}
             >
               5
             </Button>     
             <Button 
               variant="outlined"
-              className={classes.button}
+              className={classes.buttonNumber}
               onClick={()=>this.makeEquation('6')}
             >
               6
@@ -172,21 +197,21 @@ class Calculator extends Component {
           <div className={classes.row}>
             <Button 
               variant="outlined"
-              className={classes.button}
+              className={classes.buttonNumber}
               onClick={()=>this.makeEquation('1')}
             >
               1
             </Button>     
             <Button 
               variant="outlined"
-              className={classes.button}
+              className={classes.buttonNumber}
               onClick={()=>this.makeEquation('2')}
             >
               2
             </Button>     
             <Button 
               variant="outlined"
-              className={classes.button}
+              className={classes.buttonNumber}
               onClick={()=>this.makeEquation('3')}
             >
               3
@@ -202,14 +227,14 @@ class Calculator extends Component {
           <div className={classes.row}>
             <Button 
               variant="outlined"
-              className={classes.button}
+              className={classes.buttonNumber}
               onClick={()=>this.makeEquation('0')}
             >
               0
             </Button>     
             <Button 
               variant="outlined"
-              className={classes.button}
+              className={classes.buttonNumber}
               onClick={()=>this.makeEquation('.')}
             >
               .
