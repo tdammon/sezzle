@@ -13,17 +13,13 @@ const styles = theme => ({
     width: '100%',
     display : 'flex',
     aligntContent: 'center',
-    justifyContent: 'center',
-  },
-  equationList : {
-    width: '30%',
-    float: 'left',
-    background: 'white',
+    // justifyContent: 'space-around',
   },
   calculator : {
     height: 'auto',
     width: 'auto',
     padding: '15px',
+    marginRight: '10%',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'space-around',
@@ -119,9 +115,7 @@ class Calculator extends Component {
     const {classes} = this.props
     return (
       <div className={classes.root}>
-        <div className={classes.equationList}>
-            <EquationList/>
-          </div>
+        
         <div className={classes.calculator}>
           <div className={classes.row}>
             <div
@@ -260,9 +254,8 @@ class Calculator extends Component {
               /
             </Button>   
           </div>          
-          
         </div>
-        
+        <EquationList/>
       </div>
     );
   }

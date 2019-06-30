@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withStyles, List, ListItem, ListItemIcon, ListItemText} from '@material-ui/core';
+import { withStyles, List, ListItem, ListItemIcon, ListItemText, Typography} from '@material-ui/core';
 import Brightness1 from '@material-ui/icons/Brightness1';
 
 const styles = theme => ({
@@ -19,6 +19,9 @@ class EquationList extends Component {
     const classes = styles();
     return(
         <div className={classes.root}>
+        <Typography variant="h5">
+          User Submitted Equations
+        </Typography>
         <List>
         {this.props.equationList.map( equation => {
             return(
