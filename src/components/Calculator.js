@@ -16,6 +16,7 @@ const styles = theme => ({
     justifyContent: 'center',
   },
   equationList : {
+    width: '30%',
     float: 'left',
     background: 'white',
   },
@@ -118,7 +119,9 @@ class Calculator extends Component {
     const {classes} = this.props
     return (
       <div className={classes.root}>
-        
+        <div className={classes.equationList}>
+            <EquationList/>
+          </div>
         <div className={classes.calculator}>
           <div className={classes.row}>
             <div
@@ -257,9 +260,7 @@ class Calculator extends Component {
               /
             </Button>   
           </div>          
-          <div className={classes.equationList}>
-            <EquationList/>
-          </div>
+          
         </div>
         
       </div>
