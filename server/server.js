@@ -16,7 +16,7 @@ server.listen(PORT, () => console.log(`connected to ${PORT}!`));
 let equationsList = []
 io.on('connection', socket => {
     socket.on('SEND_EQUATION_TO_SERVER', equation => {
-        equationsList = [...equationsList, equation];
+        equationsList = [equation, ...equationsList];
         console.log(equationsList, 'working')
         socket.broadcast.emit('SEND_EQUATIONS_TO_USERS', equationsList);
         socket.emit('SEND_EQUATIONS_TO_USERS', equationsList);

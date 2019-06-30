@@ -12,7 +12,7 @@ const equationReducer = (state = [],action) => {
       // when the equations list is updated by other users
       // this is called so that the app's state reflects the current equations list
       console.log('deliver',action)
-      state = [ ...state, action.updatedEquations ];
+      state = [action.updatedEquations, ...state];
       break;  
     case 'PUT_ALL_EQUATIONS_TO_REDUCER':
       // put all of the equations to the reducer
@@ -23,7 +23,7 @@ const equationReducer = (state = [],action) => {
       // when the api call to the server is returned successfuly
       // this is called so that the app's state reflects the current list value
       console.log('updating', action)
-      state = [...state, ...action.equationsList];
+      state = [...action.equationsList, ...state];
       break;  
     default:
       break;
