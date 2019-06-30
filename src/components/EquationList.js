@@ -6,7 +6,7 @@ import Brightness1 from '@material-ui/icons/Brightness1';
 const styles = theme => ({
     root : {
         background : 'white',
-        backgroundColor: 'white',
+        float: 'left',
     },
 
 })
