@@ -1,68 +1,38 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Sezzle Coding Challenge
+This project is a full stack web application, deployed on Heroku, which allows a user to perform mathematical calculations, which are then posted for all users to see.
 
-## Available Scripts
+A live version of the app can be found here 
+- [Heroku App](https://calm-inlet-72674.herokuapp.com/#/home)
 
-In the project directory, you can run:
+## Build With
+This version uses React, Redux, Express, and Material-UI, (a full list of dependencies can be found in `package.json`).
 
-### `npm start`
+### Prerequisites
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Before you get started, make sure you have the following software installed on your computer:
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+- [Node.js](https://nodejs.org/en/)
+- [Nodemon](https://nodemon.io/)
 
-### `npm test`
+## Development Setup Instructions
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* Run `npm install`
+* Run `npm run server`
+* Run `npm run client`
+* Navigate to `localhost:3000`
 
-### `npm run build`
+### Completed Features
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [x] Calculator which performs math equations
+- [x] Immediate updates for all users
+- [x] Published on Heroku
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+### Navigation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* `src/` contains the React application
+* `public/` contains static assets for the client-side
+* `server/` contains the Express App
 
-### `npm run eject`
+## Authors
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+* Trevor Dammon
