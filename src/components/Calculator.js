@@ -252,9 +252,9 @@ class Calculator extends Component {
               /
             </Button>   
           </div>          
-          <EquationList/>
+          
         </div>
-        
+        <EquationList/>
       </div>
     );
   }
