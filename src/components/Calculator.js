@@ -42,7 +42,6 @@ const styles = theme => ({
     height: '36px',
     margin: 1,
     background:'#4D4E4F',
-    // opacity: '0.5',
   },
   buttonNumber : {
     height: '50%',
@@ -253,8 +252,9 @@ class Calculator extends Component {
               /
             </Button>   
           </div>          
-              <EquationList/>
+              
         </div>
+        <EquationList/>
       </div>
     );
   }
