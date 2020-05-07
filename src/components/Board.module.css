@@ -104,11 +104,11 @@
 .modalButton {
     padding: 1rem
 } */
-#red {
+.red {
     background: red;
     color: white
 }
-#green {
+.green {
     background: green;
     color: white
 }

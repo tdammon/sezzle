@@ -122,7 +122,7 @@ class Board extends Component {
               >
               <div>
                   <div className={style.modalHeader}>
-                    <div  className={style.elven} id={this.state.background}>
+                    <div  className="red" >
                       Speak Friend and Enter
                     </div>
                   </div>
