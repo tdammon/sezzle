@@ -11,13 +11,21 @@ import Draggable from 'react-draggable';
 
 
 class Board extends Component {
+
+    state ={
+        randomInt:''
+    }
       
       onStop = color => (e,position) => {
           const {x,y} = position
           console.log(x, y, color)
           sendNewPlayerToServer({[color]: {x:x, y:y}});
 
-      }
+        }
+
+     rollDice = () => {
+        this.setState({randomInt: Math.floor(Math.random() * 6)+1})
+     }   
       
 
       componentDidMount() {
@@ -67,6 +75,12 @@ class Board extends Component {
         <Draggable  onStop={this.onStop('yellow')} position={{x:this.props.colors[0].yellow.x, y:this.props.colors[0].yellow.y}}>
             <div className={style.yellowball} ></div>
         </Draggable>
+        <button className={style.diceButton} onClick={()=>this.rollDice}>
+            Roll Dice
+        </button>
+        <div className={style.dice}>
+            {this.state.randomInt}
+        </div>
         </div>
         
         <img  src={poke}/>
