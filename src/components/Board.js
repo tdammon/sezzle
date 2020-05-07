@@ -10,12 +10,18 @@ import {
 import style from "./Board.module.css"
 import poke from "./poke.jpg"
 import Draggable from 'react-draggable';
+import { Dialog } from '@material-ui/core';
 
 
 class Board extends Component {
 
     state ={
-        randomInt:''
+        randomInt:'',
+        open: false
+    }
+
+    handleClickAway = () => {
+        this.setState({...this.state, open:false})
     }
       
       onStop = color => (e,position) => {
@@ -28,7 +34,7 @@ class Board extends Component {
      rollDice = () => {
         for(let i=1;i<20;i++){
             setTimeout(()=> {
-                this.setState({randomInt: Math.floor(Math.random() * 6)+1})
+                this.setState({...this.state, randomInt: Math.floor(Math.random() * 6)+1})
                 sendNewNumberToServer(this.state.randomInt)
             }, 100)
             
@@ -37,7 +43,8 @@ class Board extends Component {
      }
      
      resetBoard = () => {
-         sendResetToServer()
+         this.setState({...this.state, open:true})
+        //  sendResetToServer()
      }
       
 
@@ -97,7 +104,20 @@ class Board extends Component {
         </div>
         
         <img  src={poke}/>
-
+        <div>
+            <Dialog
+              onClose={()=>this.handleClickAway()}
+              open={this.state.open}
+              >
+              <div>
+                  <div>
+                      Speak Friend and Enter
+                  </div>
+                  <input />
+                  <button>Enter</button>
+              </div>
+              </Dialog>
+        </div>
         <button className={style.reset} onClick={()=>{this.resetBoard()}}>Reset</button>
         {/* <div> */}
           {/* <div className={style.board}>
