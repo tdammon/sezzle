@@ -5,6 +5,7 @@ import {
   getCurrentColors,
   sendNewPlayerToServer,
   sendNewNumberToServer,
+  sendResetToServer
 } from './socket';
 import style from "./Board.module.css"
 import poke from "./poke.jpg"
@@ -25,7 +26,7 @@ class Board extends Component {
         }
 
      rollDice = () => {
-        for(let i=1;i<10;i++){
+        for(let i=1;i<20;i++){
             setTimeout(()=> {
                 this.setState({randomInt: Math.floor(Math.random() * 6)+1})
                 sendNewNumberToServer(this.state.randomInt)
@@ -33,7 +34,11 @@ class Board extends Component {
             
         }
         
-     }   
+     }
+     
+     resetBoard = () => {
+         sendResetToServer()
+     }
       
 
       componentDidMount() {

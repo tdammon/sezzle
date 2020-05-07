@@ -14,6 +14,9 @@ const playerReducer = (state = [0],action) => {
       case 'PUT_NUMBER_TO_REDUCER':
         console.log(action, state)
         state = [action.number];
+        break;  
+        case 'SEND_RESET_TO_REDUCER':
+        state = [0]
         break;   
       default:
         console.log(action)

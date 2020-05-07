@@ -47,7 +47,9 @@ const configureSocket = dispatch => {
     dispatch({ type: 'PUT_NUMBER_TO_REDUCER', number})
   })
 
-  
+  socket.on('SEND_RESET', () => {
+    dispatch({type: 'SEND_RESET_TO_REDUCER'})
+  })
 
   return socket;
 };
@@ -68,5 +70,8 @@ export const sendNewPlayerToServer = player =>
 
 export const sendNewNumberToServer = number =>
   socket.emit('SEND_NEW_NUMBER_TO_SERVER', number)  
+
+export const sendResetToServer = () =>
+  socket.emit('SEND_RESET_TO_SERVER')
 
 export default configureSocket;
