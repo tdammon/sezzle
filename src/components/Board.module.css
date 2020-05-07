@@ -105,10 +105,14 @@
     padding: 1rem
 } */
 .red {
+    font-family: elven;
+    font-size: 4rem;
     background: red;
     color: white
 }
 .green {
+    font-family: elven;
+    font-size: 4rem;
     background: green;
     color: white
 }
