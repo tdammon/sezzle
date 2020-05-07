@@ -24,7 +24,9 @@ class Board extends Component {
         }
 
      rollDice = () => {
-        console.log('rolling')
+        for(let i=1;i<100;i++){
+            this.setState({randomInt: i})
+        }
         this.setState({randomInt: Math.floor(Math.random() * 6)+1})
      }   
       
