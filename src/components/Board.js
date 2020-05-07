@@ -25,11 +25,11 @@ class Board extends Component {
         }
 
      rollDice = () => {
-        for(let i=1;i<100;i++){
+        for(let i=1;i<10;i++){
             setTimeout(()=> {
                 this.setState({randomInt: Math.floor(Math.random() * 6)+1})
                 sendNewNumberToServer(this.state.randomInt)
-            }, 10)
+            }, 100)
             
         }
         
