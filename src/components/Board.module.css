@@ -81,6 +81,22 @@
     z-index: 999;
     border-radius:90px;
 }
+.brownball {
+    height:45px;
+    width:45px;
+    /* border-radius: 90px; */
+    background-color:brown;
+    z-index: 999;
+    border-radius:90px;
+}
+.turquoiseball {
+    height:45px;
+    width:45px;
+    /* border-radius: 90px; */
+    background-color: turquoise;
+    z-index: 999;
+    border-radius:90px;
+}
 .dice {
     font-size: 3rem;
 }

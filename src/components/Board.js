@@ -106,6 +106,12 @@ class Board extends Component {
         <Draggable  onStop={this.onStop('yellow')} position={{x:this.props.colors[0].yellow.x, y:this.props.colors[0].yellow.y}}>
             <div className={style.yellowball} ></div>
         </Draggable>
+        <Draggable  onStop={this.onStop('brown')} position={{x:this.props.colors[0].brown.x, y:this.props.colors[0].brown.y}}>
+            <div className={style.brownball} ></div>
+        </Draggable>
+        <Draggable  onStop={this.onStop('turquoise')} position={{x:this.props.colors[0].turquoise.x, y:this.props.colors[0].turquoise.y}}>
+            <div className={style.turquoiseball} ></div>
+        </Draggable>
         <button className={style.diceButton} onClick={()=>this.rollDice()}>
             Roll Dice
         </button>
