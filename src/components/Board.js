@@ -7,7 +7,7 @@ import {
 } from './socket';
 import style from "./Board.module.css"
 import poke from "./poke.jpg"
-import Draggable, {DraggableCore} from 'react-draggable';
+import Draggable from 'react-draggable';
 
 
 class Board extends Component {
