@@ -110,7 +110,7 @@ class Board extends Component {
               open={this.state.open}
               >
               <div>
-                  <div>
+                  <div className={style.elven}>
                       Speak Friend and Enter
                   </div>
                   <input />
