@@ -88,6 +88,7 @@ class Board extends Component {
         </button>
         <div className={style.dice}>
             {this.props.number}
+            {JSON.stringify(this.props.number)}
         </div>
         </div>
         
