@@ -88,5 +88,10 @@
     height:20px
 }
 .elven {
-    font-family: elven
+    font-family: elven;
+    font-size: 2rem
+}
+.modalHeader {
+    padding:1.5rem;
+    border-bottom: 1px solid black
 }

@@ -110,8 +110,10 @@ class Board extends Component {
               open={this.state.open}
               >
               <div>
-                  <div className={style.elven}>
+                  <div className={style.modalHeader}>
+                    <div className={style.elven}>
                       Speak Friend and Enter
+                    </div>
                   </div>
                   <input />
                   <button>Enter</button>
