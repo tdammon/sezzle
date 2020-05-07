@@ -23,7 +23,7 @@ class Board extends Component {
     }
 
     handleClickAway = () => {
-        this.setState({...this.state, open:false, background: 'elven'})
+        this.setState({...this.state, open:false})
     }
       
       onStop = color => (e,position) => {
@@ -122,7 +122,7 @@ class Board extends Component {
               >
               <div>
                   <div className={style.modalHeader}>
-                    <div  className={style.this.state.background}>
+                    <div  className={style.this.state.background} >
                       Speak Friend and Enter
                     </div>
                   </div>
