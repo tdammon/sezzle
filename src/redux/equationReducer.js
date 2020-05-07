@@ -26,6 +26,7 @@ const equationReducer = (state = [],action) => {
       state = [...action.equationsList, ...state];
       break;  
     default:
+      console.log(action)
       break;
   }
 

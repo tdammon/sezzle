@@ -1,0 +1,79 @@
+.app {
+    display: flex;
+}
+.board {
+    border: 5px solid black;
+    height: 98vh;
+    width: 98vh;
+}
+.row {
+    height: 11.11%;
+    width: 100%;
+    display: flex
+}
+.tile {
+    border: 1px solid black;
+    box-sizing: border-box;
+    height: 100%;
+    width: 11.11%;
+}
+.playerInfo {
+    display: inline;
+    padding-left: 3rem;
+}
+.redball {
+    height:45px;
+    width:45px;
+    /* border-radius: 90px; */
+    background-color:red;
+    z-index: 999;
+    border-radius:90px;
+}
+.blueball {
+    height:45px;
+    width:45px;
+    /* border-radius: 90px; */
+    background-color:blue;
+    z-index: 999;
+    border-radius:90px;
+}
+.greenball {
+    height:45px;
+    width:45px;
+    /* border-radius: 90px; */
+    background-color:green;
+    z-index: 999;
+    border-radius:90px;
+}
+.purpleball {
+    height:45px;
+    width:45px;
+    /* border-radius: 90px; */
+    background-color:purple;
+    z-index: 999;
+    border-radius:90px;
+}
+.blackball {
+    height:45px;
+    width:45px;
+    /* border-radius: 90px; */
+    background-color:black;
+    z-index: 999;
+    border-radius:90px;
+}
+.greyball {
+    height:45px;
+    width:45px;
+    /* border-radius: 90px; */
+    background-color:grey;
+    z-index: 999;
+    border-radius:90px;
+}
+.yellowball {
+    height:45px;
+    width:45px;
+    /* border-radius: 90px; */
+    background-color:yellow;
+    z-index: 999;
+    border-radius:90px;
+}

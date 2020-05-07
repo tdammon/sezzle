@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 
 import {connect} from 'react-redux';
-
+import Board from './Board';
 import Calculator from './Calculator'
 
 class App extends Component {
@@ -22,7 +22,7 @@ class App extends Component {
             <Route
               exact
               path="/home"
-              component={Calculator}
+              component={Board}
             />
             <Route render={() => <h1>404</h1>} />
           </Switch>

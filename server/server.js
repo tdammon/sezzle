@@ -14,13 +14,31 @@ server.listen(PORT, () => console.log(`connected to ${PORT}!`));
 
 
 let equationsList = []
+let playerList =[]
+let colorsList= {red:{x:0, y:0},blue:{x:0, y:0},green:{x:0, y:0},purple:{x:0, y:0},pink:{x:0, y:0},black:{x:0, y:0},grey:{x:0, y:0},yellow:{x:0, y:0}}
 io.on('connection', socket => {
     socket.on('SEND_EQUATION_TO_SERVER', equation => {
         equationsList = [equation, ...equationsList];
         console.log(equationsList, 'working')
         socket.broadcast.emit('SEND_EQUATIONS_TO_USERS', equationsList);
         socket.emit('SEND_EQUATIONS_TO_USERS', equationsList);
-      });
+    });
+
+    socket.on('SEND_NEW_PLAYER_TO_SERVER', player => {
+      console.log(player, 'player')
+      // playerList = [{name:player.name, piece:player.piece, position:player.position}, ...playerList];
+      colorsList = {...colorsList, ...player }
+      console.log(colorsList)
+      // console.log(playerList, 'working')
+      // socket.broadcast.emit('SEND_PLAYERS_TO_USERS', playerList);
+      socket.broadcast.emit('SEND_COLORS_TO_USERS', colorsList)
+      // socket.emit('SEND_PLAYERS_TO_USERS', playerList)
+      socket.emit('SEND_COLORS_TO_USERS', colorsList)
+    })
+
+    socket.on('GET_COLORS_LIST', () => socket.emit('CURRENT_COLOR_LIST', colorsList));
+
+    socket.on('GET_PLAYERS_LIST', () => socket.emit('CURRENT_PLAYER_LIST', playerList));
 
     socket.on('GET_EQUATIONS_LIST', () => socket.emit('CURRENT_LIST', equationsList));
 
