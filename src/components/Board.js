@@ -24,6 +24,7 @@ class Board extends Component {
         }
 
      rollDice = () => {
+        console.log('rolling')
         this.setState({randomInt: Math.floor(Math.random() * 6)+1})
      }   
       
@@ -75,7 +76,7 @@ class Board extends Component {
         <Draggable  onStop={this.onStop('yellow')} position={{x:this.props.colors[0].yellow.x, y:this.props.colors[0].yellow.y}}>
             <div className={style.yellowball} ></div>
         </Draggable>
-        <button className={style.diceButton} onClick={()=>this.rollDice}>
+        <button className={style.diceButton} onClick={()=>this.rollDice()}>
             Roll Dice
         </button>
         <div className={style.dice}>
