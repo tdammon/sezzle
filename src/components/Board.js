@@ -11,15 +11,6 @@ import Draggable, {DraggableCore} from 'react-draggable';
 
 
 class Board extends Component {
-
-    state = {
-        
-      }
-
-    //   onControlledDrag  = (e, position) => {
-    //     const {x, y} = position;
-    //     console.log(e)
-    //   };
       
       onStop = color => (e,position) => {
           const {x,y} = position
@@ -32,7 +23,7 @@ class Board extends Component {
       componentDidMount() {
         const { dispatch } = this.props;
         // when our app mounts, it should always be updated with the current equation list
-        getCurrentPlayers(dispatch);
+        // getCurrentPlayers(dispatch);
         getCurrentColors(dispatch)
       }  
 
@@ -52,28 +43,28 @@ class Board extends Component {
         return (
         <div className={style.app}>
         <div>
-        <Draggable onDrag={this.onControlledDrag} onStop={this.onStop('red')} position={{x:this.props.colors[0].red.x, y:this.props.colors[0].red.y}}>
+        <Draggable  onStop={this.onStop('red')} position={{x:this.props.colors[0].red.x, y:this.props.colors[0].red.y}}>
         <div className={style.redball}></div>
         </Draggable>
-        <Draggable onDrag={this.onControlledDrag} onStop={this.onStop('blue')} position={{x:this.props.colors[0].blue.x, y:this.props.colors[0].blue.y}}>
+        <Draggable  onStop={this.onStop('blue')} position={{x:this.props.colors[0].blue.x, y:this.props.colors[0].blue.y}}>
             <div className={style.blueball}></div>
         </Draggable>
-        <Draggable onDrag={this.onControlledDrag} onStop={this.onStop('green')} position={{x:this.props.colors[0].green.x, y:this.props.colors[0].green.y}}>
+        <Draggable  onStop={this.onStop('green')} position={{x:this.props.colors[0].green.x, y:this.props.colors[0].green.y}}>
             <div className={style.greenball}></div>
         </Draggable>
-        <Draggable onDrag={this.onControlledDrag} onStop={this.onStop('purple')} position={{x:this.props.colors[0].purple.x, y:this.props.colors[0].purple.y}}>
+        <Draggable  onStop={this.onStop('purple')} position={{x:this.props.colors[0].purple.x, y:this.props.colors[0].purple.y}}>
             <div className={style.purpleball}></div>
         </Draggable>
-        <Draggable onDrag={this.onControlledDrag} onStop={this.onStop('pink')} position={{x:this.props.colors[0].pink.x, y:this.props.colors[0].pink.y}}>
+        <Draggable  onStop={this.onStop('pink')} position={{x:this.props.colors[0].pink.x, y:this.props.colors[0].pink.y}}>
             <div className={style.pinkball}></div>
         </Draggable>
-        <Draggable onDrag={this.onControlledDrag} onStop={this.onStop('black')} position={{x:this.props.colors[0].black.x, y:this.props.colors[0].black.y}}>
+        <Draggable  onStop={this.onStop('black')} position={{x:this.props.colors[0].black.x, y:this.props.colors[0].black.y}}>
             <div className={style.blackball}></div>
         </Draggable>
-        <Draggable onDrag={this.onControlledDrag} onStop={this.onStop('grey')} position={{x:this.props.colors[0].grey.x, y:this.props.colors[0].grey.y}}>
+        <Draggable  onStop={this.onStop('grey')} position={{x:this.props.colors[0].grey.x, y:this.props.colors[0].grey.y}}>
             <div className={style.greyball} ></div>
         </Draggable>
-        <Draggable onDrag={this.onControlledDrag} onStop={this.onStop('yellow')} position={{x:this.props.colors[0].yellow.x, y:this.props.colors[0].yellow.y}}>
+        <Draggable  onStop={this.onStop('yellow')} position={{x:this.props.colors[0].yellow.x, y:this.props.colors[0].yellow.y}}>
             <div className={style.yellowball} ></div>
         </Draggable>
         </div>
