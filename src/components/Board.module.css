@@ -95,15 +95,15 @@
     padding:1.5rem;
     border-bottom: 1px solid black
 }
-.modalHeader {
+.modalBody {
     padding:1.5rem;
 }
-.modalInput {
+/* .modalInput {
     padding: 1rem;
 }
 .modalButton {
     padding: 1rem
-}
+} */
 #red {
     background: red;
     color: white
