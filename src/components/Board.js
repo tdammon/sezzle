@@ -98,8 +98,8 @@ class Board extends Component {
         
         <img  src={poke}/>
 
-        <button onClick={()=>{this.resetBoard()}}>Reset</button>
-        
+        <button className={style.reset} onClick={()=>{this.resetBoard()}}>Reset</button>
+        {JSON.stringify(this.props.colors)}
         {/* <div> */}
           {/* <div className={style.board}>
           <div className={style.row}>
