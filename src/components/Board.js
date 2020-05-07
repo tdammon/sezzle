@@ -4,6 +4,7 @@ import {
   getCurrentPlayers,
   getCurrentColors,
   sendNewPlayerToServer,
+  sendNewNumberToServer,
 } from './socket';
 import style from "./Board.module.css"
 import poke from "./poke.jpg"
@@ -27,6 +28,7 @@ class Board extends Component {
         for(let i=1;i<100;i++){
             setTimeout(()=> {
                 this.setState({randomInt: Math.floor(Math.random() * 6)+1})
+                sendNewNumberToServer(this.state.randomInt)
             }, 10)
             
         }
@@ -85,7 +87,7 @@ class Board extends Component {
             Roll Dice
         </button>
         <div className={style.dice}>
-            {this.state.randomInt}
+            {this.props.number}
         </div>
         </div>
         
@@ -223,7 +225,7 @@ class Board extends Component {
 }
 
 const mapStateToProps = state => ({
-    playerList: state.playerReducer,
+    number: state.playerReducer,
     colors: state.colorReducer,
   });
 

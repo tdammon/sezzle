@@ -36,6 +36,12 @@ io.on('connection', socket => {
       socket.emit('SEND_COLORS_TO_USERS', colorsList)
     })
 
+    socket.on('SEND_NEW_NUMBER_TO_SERVER', number => {
+      console.log(number, 'number')
+      socket.broadcast.emit('SEND_NUMBER_TO_USERS', number)
+      socket.emit('SEND_NUMBER_TO_USERS', number)
+    })
+
     socket.on('GET_COLORS_LIST', () => socket.emit('CURRENT_COLOR_LIST', colorsList));
 
     socket.on('GET_PLAYERS_LIST', () => socket.emit('CURRENT_PLAYER_LIST', playerList));

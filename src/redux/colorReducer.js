@@ -11,6 +11,7 @@ const colorReducer = (state = [{red:{x:0, y:0},blue:{x:0, y:0},green:{x:0, y:0},
       console.log(action, state)
       state = [action.colorsList];
       break; 
+      
     default:
       console.log(action)
       break;

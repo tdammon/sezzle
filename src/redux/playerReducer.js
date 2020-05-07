@@ -1,6 +1,6 @@
 import { socket } from '../index';
 
-const playerReducer = (state = [],action) => {
+const playerReducer = (state = [0],action) => {
     switch (action.type) {
 
       case 'PUT_ALL_PLAYERS_TO_REDUCER':
@@ -11,6 +11,10 @@ const playerReducer = (state = [],action) => {
         console.log(action)
         state = [...action.playerList];
         break;
+      case 'PUT_NUMBER_TO_REDUCER':
+        console.log(action, state)
+        state = [action.colorsList];
+        break;   
       default:
         console.log(action)
         break;

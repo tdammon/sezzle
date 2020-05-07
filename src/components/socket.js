@@ -42,6 +42,11 @@ const configureSocket = dispatch => {
   dispatch({ type: 'PUT_ALL_COLORS_TO_REDUCER', colorsList})  
 })
 
+  socket.on('SEND_NUMBER_TO_USERS', number => {
+    console.log('sending number to users', number)
+    dispatch({ type: 'PUT_NUMBER_TO_REDUCER', number})
+  })
+
   
 
   return socket;
@@ -60,5 +65,8 @@ export const sendEquationToServer = equation =>
   
 export const sendNewPlayerToServer = player =>
   socket.emit('SEND_NEW_PLAYER_TO_SERVER', player)  
+
+export const sendNewNumberToServer = number =>
+  socket.emit('SEND_NEW_NUMBER_TO_SERVER', number)  
 
 export default configureSocket;
