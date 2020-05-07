@@ -43,6 +43,7 @@ io.on('connection', socket => {
     })
 
     socket.on('SEND_RESET_TO_SERVER', () => {
+      colorsList= {red:{x:0, y:0},blue:{x:0, y:0},green:{x:0, y:0},purple:{x:0, y:0},pink:{x:0, y:0},black:{x:0, y:0},grey:{x:0, y:0},yellow:{x:0, y:0}}
       socket.broadcast.emit('SEND_RESET')
       socket.emit('SEND_RESET')
     })
