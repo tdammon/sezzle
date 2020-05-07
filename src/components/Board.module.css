@@ -89,9 +89,26 @@
 }
 .elven {
     font-family: elven;
-    font-size: 2rem
+    font-size: 4rem
 }
 .modalHeader {
     padding:1.5rem;
     border-bottom: 1px solid black
+}
+.modalHeader {
+    padding:1.5rem;
+}
+.modalInput {
+    padding: 1rem;
+}
+.modalButton {
+    padding: 1rem
+}
+#red {
+    background: red;
+    color: white
+}
+#green {
+    background: green;
+    color: white
 }

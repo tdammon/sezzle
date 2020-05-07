@@ -17,7 +17,9 @@ class Board extends Component {
 
     state ={
         randomInt:'',
-        open: false
+        open: false,
+        pass: '',
+        background: ''
     }
 
     handleClickAway = () => {
@@ -45,6 +47,15 @@ class Board extends Component {
      resetBoard = () => {
          this.setState({...this.state, open:true})
         //  sendResetToServer()
+     }
+
+     submitReset =() => {
+         if(this.state.pass == 'Friend and Enter'){
+             sendResetToServer()
+             this.setState({...this.state, background: 'green'})    
+         } else {
+             this.setState({...this.state, background: 'red'})
+         }
      }
       
 
@@ -111,12 +122,14 @@ class Board extends Component {
               >
               <div>
                   <div className={style.modalHeader}>
-                    <div className={style.elven}>
+                    <div  className={style.elven} id={this.state.background}>
                       Speak Friend and Enter
                     </div>
                   </div>
-                  <input />
-                  <button>Enter</button>
+                  <div className={style.modalBody}>
+                    <input className={style.modalInput}  value={this.state.pass} onChange={this.updateName('pass')}/>
+                    <button className={style.modalButton} onClick={()=>this.submitReset()}>Enter</button>
+                  </div>
               </div>
               </Dialog>
         </div>
