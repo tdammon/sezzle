@@ -52,9 +52,9 @@ class Board extends Component {
      submitReset =() => {
          if(this.state.pass == 'Friend and Enter'){
              sendResetToServer()
-             this.setState({...this.state, background: 'style.green'})    
+             this.setState({...this.state, background: 'green'})    
          } else {
-             this.setState({...this.state, background: 'style.red'})
+             this.setState({...this.state, background: 'red'})
          }
      }
       
