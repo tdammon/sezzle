@@ -13,7 +13,7 @@ const playerReducer = (state = [0],action) => {
         break;
       case 'PUT_NUMBER_TO_REDUCER':
         console.log(action, state)
-        state = [action.colorsList];
+        state = [action.number];
         break;   
       default:
         console.log(action)
