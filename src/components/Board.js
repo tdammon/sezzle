@@ -97,6 +97,8 @@ class Board extends Component {
         </div>
         
         <img  src={poke}/>
+
+        <button onClick={()=>{this.resetBoard()}}>Reset</button>
         
         {/* <div> */}
           {/* <div className={style.board}>
